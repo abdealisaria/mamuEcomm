@@ -63,8 +63,8 @@ export default function Home() {
             <h1 className='section-header'>Checkout</h1>
             <div className='contact-wrapper'>
                 <form action='/success' id='contact-form' className='form-horizontal' role='form'>
-                    <div class="form-group">
-                        <div class="col-sm-12">
+                    <div className="form-group">
+                        <div className="col-sm-12">
                             <input
                                 type="text"
                                 name="name"
@@ -79,8 +79,8 @@ export default function Home() {
                         </div>
                     </div>
                     <br />
-                    <div class="form-group">
-                        <div class="col-sm-12">
+                    <div className="form-group">
+                        <div className="col-sm-12">
                             <input
                                 type="email"
                                 className='form-control'
@@ -106,8 +106,8 @@ export default function Home() {
                     />
                     <br />
                     <br />
-                    <div class="form-group">
-                        <div class="col-sm-12">
+                    <div className="form-group">
+                        <div className="col-sm-12">
                             <input
                                 className='form-control'
                                 type='text'
@@ -129,7 +129,7 @@ export default function Home() {
                             <br />
                             <input type="radio" id="upi" name="payment" value="upi" onClick={handleChange}
                                 onBlur={onBlur} required />
-                            <label for="upi"> Pay ₹{totalPrice} by scanning below QR Code using any UPI app
+                            <label htmlFor="upi"> Pay ₹{totalPrice} by scanning below QR Code using any UPI app
                                 <br />
                                 <img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPqHibOuqEQs3XkGGZR7vij_Comj37QBkr-sFndkHgEL4OsPHiqldPknScjqhNBSFB3bt89S6Ku-a_2IK0Pia3tJ-_kKiuHbogPyaojheK-q8TMtM7gEmOd_7JwS8KXxiw3ZWXLEL0QZhgs_U7BSLSk9Vbn9TOCYgJqPhAdIJYoj0NPaEZ98oHzUgyy34/s2000/GooglePay_QR.png' className='qrCode'></img></label>
                         </div>
@@ -137,15 +137,15 @@ export default function Home() {
                         <div>
                             <input type="radio" id="cod" name="payment" value="cod" onClick={handleChange}
                                 onBlur={onBlur} />
-                            <label for="cod"> Cash on delivery</label>
+                            <label htmlFor="cod"> Cash on delivery</label>
                         </div>
                         <br />
                     </fieldset>
                     <br />
-                    <div class="">
-                        <ul class="">
+                    <div>
+                        <ul>
                             <h3>Order details</h3>
-                            {cartItems?.map((product) => <li>{product.name} Qty: {product.quantity} Price:₹{product.price} </li>)}
+                            {cartItems?.map((product) => <li key={product._id}>{product.name} Qty: {product.quantity} Price:₹{product.price} </li>)}
                         </ul>
                         <h2>
                             Total : ₹{totalPrice}
